@@ -1,3 +1,6 @@
+I did this project with Firebase V9 and motion-framer.. In order to use this codes you must fill the .ENV with your credentials. Thanks.. Yigit OZDAMAR
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
