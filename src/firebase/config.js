@@ -4,12 +4,12 @@ import { getStorage } from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBO1qTfCippRCoJFPzjDMTX-OD-1j6jgTE",
-  authDomain: "photogram-71f15.firebaseapp.com",
-  projectId: "photogram-71f15",
-  storageBucket: "photogram-71f15.appspot.com",
-  messagingSenderId: "665201241192",
-  appId: "1:665201241192:web:49ab191846fb0a34fd9fdd",
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
+  appId: process.env.REACT_APP_APP_ID,
 };
 
 initializeApp(firebaseConfig);
