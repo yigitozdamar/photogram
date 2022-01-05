@@ -30,14 +30,17 @@ const useStorage = (file) => {
         setError(err);
       },
       async () => {
-        getDownloadURL(uploadTask.snapshot.ref).then((url) => setUrl(url));
+        await getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+          //to create timestamp
+          const createdAt = serverTimestamp();
 
-        //to create timestamp
-        const createdAt = serverTimestamp();
+          //after creating collectionRef, create payload and send it to firestore
+          const payload = { url, createdAt };
+          const docRef = addDoc(collectionRef, payload);
+          console.log(docRef);
 
-        //after creating collectionRef, create payload and send it to firestore
-        const payload = { url, createdAt };
-        const docRef = await addDoc(collectionRef, payload);
+          setUrl(url);
+        });
       }
     );
   }, [file]);
